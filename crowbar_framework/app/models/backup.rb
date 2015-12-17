@@ -110,12 +110,12 @@ class Backup
 
     Crowbar::Backup::Export.new(dir).export
     Dir.chdir(dir) do
-      ar = Archive::Compress.new(
+      system(
+        "tar",
+        "-czf",
         "#{Backup.image_dir}/#{name}-#{created_at}.tar.gz",
-        type: :tar,
-        compression: :gzip2
+        Find.find(".").select { |f| f.gsub!(/^.\//, "") if File.file?(f) }.join(", ")
       )
-      ar.compress(Find.find(".").select { |f| f.gsub!(/^.\//, "") if File.file?(f) })
       saved = true
     end
     FileUtils.rm_rf(dir)

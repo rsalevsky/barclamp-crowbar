@@ -1,4 +1,6 @@
 - if @draggable
+  .alert.alert-danger
+    = t(".eol", link: link_to("https://www.suse.com/lifecycle/", "https://www.suse.com/lifecycle/")).html_safe
   .alert.alert-info{ "data-id" => "AUTOMATIC", "data-droppable" => "true" }
     = t(".drag_hint").html_safe
 

@@ -345,6 +345,7 @@ en:
       add_group_error: 'Group name should start with a letter and only contain letters, digits, -, _, ., or :.'
       hide: 'Hide Group'
     node_groups:
+      eol: 'This version of SUSE OpenStack Cloud is EOL since 2017-05-15. For more information please visit %{link}.'
       drag_hint: 'You may regroup nodes by dragging a node into the desired group. You may drop a node [here] to reset to <i>automatic grouping</i>.'
       new_drag: 'To move nodes, drag onto this box'
     list:
